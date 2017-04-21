@@ -9,6 +9,7 @@ var server = http.createServer( function(request, response) {
 		'Content-Type': 'text/plain'
 	});
 	response.write(body);
+	response.end();
 });
 
 server.listen(port);
