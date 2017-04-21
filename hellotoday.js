@@ -2,8 +2,10 @@ var host = (process.env.VCAP_APP_HOST || 'localhost');
 var port = (process.env.VCAP_APP_PORT || 8080);
 var http = require('http');
 
+var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
 var server = http.createServer( function(request, response) {
-	var body = 'Hello Bluemix!';
+	var body = 'Hello ' + days[new Date().getDay()];
 	response.writeHead( 200, {
 		'Content-Length': body.length,
 		'Content-Type': 'text/plain'
@@ -12,4 +14,4 @@ var server = http.createServer( function(request, response) {
 	response.end();
 });
 
-server.listen(port);
+server.listen(host, port);
