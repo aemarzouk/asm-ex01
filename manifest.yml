@@ -6,3 +6,4 @@ applications:
   name: asm-ex01
   host: asm-ex01
   disk_quota: 1024M
+  command: node hellotoday.js
